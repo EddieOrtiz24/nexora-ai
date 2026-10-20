@@ -32,6 +32,7 @@ function App() {
 
   return (
     <>
+      <a className="skip-link" href="#main-content">Saltar al contenido principal</a>
       <header className="site-header">
         <nav className="nav-shell" aria-label="Navegación principal">
           <Brand />
@@ -40,7 +41,7 @@ function App() {
         </nav>
       </header>
 
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <section className="hero section-wrap" id="inicio" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow"><span className="status-dot" /> UNA NUEVA FORMA DE CREAR</p>
@@ -77,7 +78,7 @@ function App() {
 
         <section className="faq section-wrap section-block" id="faq" aria-labelledby="faq-title">
           <div className="faq-heading"><p className="eyebrow">¿TE QUEDA ALGUNA DUDA?</p><h2 id="faq-title">Buenas preguntas.<br /><span className="gradient-text">Respuestas claras.</span></h2><p>¿Tienes otra pregunta? <a href="mailto:hola@nexora.ai">Hablemos <Arrow /></a></p></div>
-          <div className="faq-list">{questions.map((item, index) => { const isOpen = openQuestion === index; const panelId = `faq-answer-${index}`; return <article className={`faq-item${isOpen ? ' is-open' : ''}`} key={item.question}><h3><button type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setOpenQuestion(isOpen ? null : index)}><span>{item.question}</span><span className="faq-toggle" aria-hidden="true">{isOpen ? '−' : '+'}</span></button></h3>{isOpen && <div className="faq-answer" id={panelId}><p>{item.answer}</p></div>}</article> })}</div>
+          <div className="faq-list">{questions.map((item, index) => { const isOpen = openQuestion === index; const panelId = `faq-answer-${index}`; return <article className={`faq-item${isOpen ? ' is-open' : ''}`} key={item.question}><h3><button type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setOpenQuestion(isOpen ? null : index)}><span>{item.question}</span><span className="faq-toggle" aria-hidden="true">{isOpen ? '−' : '+'}</span></button></h3><div className="faq-answer" id={panelId} hidden={!isOpen}>{isOpen && <p>{item.answer}</p>}</div></article> })}</div>
         </section>
 
         <section className="cta-section section-wrap" aria-labelledby="cta-title"><div className="cta-glow" /><p className="eyebrow">EL FUTURO TIENE TU NOMBRE</p><h2 id="cta-title">¿Qué vas a crear<br />con <span className="gradient-text">todo ese tiempo?</span></h2><a className="button" href="#precios">Tu primera idea empieza aquí <Arrow /></a><span className="cta-spark" aria-hidden="true">✳</span></section>
