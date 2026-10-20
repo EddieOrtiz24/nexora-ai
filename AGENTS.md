@@ -35,3 +35,6 @@ Desarrollar una landing React + TypeScript con calidad verificable.
 Planificación -> Desarrollo -> Auditoría -> Pruebas -> Decisión.
 
 La autorización de correcciones corresponde al usuario.
+
+## Protocolo reproducible multiagente
+El procedimiento operativo, estados, permisos, severidades, evidencias y plantillas están en [`docs/engineering/multi-agent-protocol.md`](docs/engineering/multi-agent-protocol.md). Este documento complementa estas reglas; si hubiera discrepancia, prevalecen las reglas de este archivo y la autorización explícita del usuario.
